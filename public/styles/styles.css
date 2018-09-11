@@ -1,3 +1,9 @@
-.list-group-item {
-  line-height: 2.5;
+#main {
+  background-image: url("../images/Picture-of-Cheese-Pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.card-body{
+  background-color: transparent
 }
