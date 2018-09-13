@@ -1,0 +1,9 @@
+#main {
+  background-image: url("../images/Picture-of-Cheese-Pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.card-body{
+  background-color: transparent
+}
