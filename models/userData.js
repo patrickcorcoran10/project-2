@@ -35,6 +35,16 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false
+    },
+    restaurant_zip: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: false
+    }, 
+    restaurant_rating: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: false
     }
   });
 
