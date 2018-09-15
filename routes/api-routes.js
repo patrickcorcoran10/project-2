@@ -67,13 +67,13 @@ app.get("/api/favs", function(req, res) {
 app.post("/api/newfav", function(req, res) {
   console.log(req.body)
   db.UserData.create({
-    restaurant_id:,
-    restaurant_name: req.body.title,
-    restaurant_rating: req.body.,
-    restaurant_zip: ,
-    restaurant_type:,
-    restaurant_image:,
-    restaurant_cost:,
+    restaurant_id:
+    restaurant_name:
+    restaurant_rating:
+    restaurant_zip: 
+    restaurant_type:
+    restaurant_image:
+    restaurant_cost:
   })
   .then(function(favs) {
     res.json(favs);
