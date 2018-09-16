@@ -2,3 +2,21 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+#logIn {
+  background-image: url("../images/lust.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#signUp {
+  background-image: url("../images/lust.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#favs{
+  background-image: url("../images/lust.jpg ");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
