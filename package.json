@@ -23,7 +23,11 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "proxy-addr": "^2.0.4",
+<<<<<<< HEAD
     "sequelize": "^4.38.0"
+=======
+    "sequelize": "^4.38.1"
+>>>>>>> 22e9fc071f8cb030a7d7030ff53d4129974f7d90
   },
   "devDependencies": {
     "chai": "^4.1.2",

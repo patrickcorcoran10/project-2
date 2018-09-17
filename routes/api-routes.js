@@ -56,26 +56,26 @@ module.exports = function(app) {
 
 // GET route for user's favorite restaurants
 
-app.get("/api/favs", function(req, res) {
-  db.UserData.findAll({}).then(function(favs) {
-    res.json(favs);
-  });
-});
+// app.get("/api/favs", function(req, res) {
+//   db.UserData.findAll({}).then(function(favs) {
+//     res.json(favs);
+//   });
+// });
 
 // POST route for saving a new restaurant into the datbase
 
-app.post("/api/newfav", function(req, res) {
-  console.log(req.body)
-  db.UserData.create({
-    restaurant_id:,
-    restaurant_name: req.body.title,
-    restaurant_rating: req.body.,
-    restaurant_zip: ,
-    restaurant_type:,
-    restaurant_image:,
-    restaurant_cost:,
-  })
-  .then(function(favs) {
-    res.json(favs);
-  });
-});
+// app.post("/api/newfav", function(req, res) {
+//   console.log(req.body)
+//   db.UserData.create({
+//     restaurant_id:,
+//     restaurant_name: req.body.title,
+//     restaurant_rating: req.body.,
+//     restaurant_zip: ,
+//     restaurant_type:,
+//     restaurant_image:,
+//     restaurant_cost:,
+//   })
+//   .then(function(favs) {
+//     res.json(favs);
+//   });
+// });
