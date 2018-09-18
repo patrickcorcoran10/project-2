@@ -56,11 +56,7 @@ module.exports = function(app) {
 
 // GET route for user's favorite restaurants
 
-// app.get("/api/favs", function(req, res) {
-//   db.UserData.findAll({}).then(function(favs) {
-//     res.json(favs);
-//   });
-// });
+// 
 
 // POST route for saving a new restaurant into the datbase
 
@@ -79,3 +75,5 @@ module.exports = function(app) {
 //     res.json(favs);
 //   });
 // });
+
+//TEST COMMENT
