@@ -13,9 +13,14 @@
 </head>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-          $('#myModal').css("display", "block");
-    });
+    // $(document).ready(function(){
+    //       $('#myModal').css("display", "block");
+    // });
+    window.onload = function () {
+    document.getElementById('button').onclick = function () {
+        document.getElementById('modal').style.display = "none"
+    };
+};
   
 </script>
 
@@ -47,12 +52,12 @@
     </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     ENTER MY ZIP!
-</button>
+</button> -->
   
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -69,7 +74,20 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div id="modal">
+    <div class="modalconent">
+         <h1></h1>
+
+        <p>Enter Your Zip Code</p>
+        <div class="modal-body">
+          <input type="text" maxlength="5" placeholder="zipcode">
+        </div>
+
+        <button id="button">Let's Eat!</button>
+    </div>
+</div>
 
 
 
