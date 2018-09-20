@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
       unique: false
     },
     restaurant_zip: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: false
     }, 

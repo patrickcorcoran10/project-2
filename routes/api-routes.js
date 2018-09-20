@@ -52,7 +52,7 @@ module.exports = function(app) {
     }
   });
 
-};
+
 
 // GET route for user's favorite restaurants
 
@@ -63,6 +63,7 @@ module.exports = function(app) {
 // app.post("/api/newfav", function(req, res) {
 //   console.log(req.body)
 //   db.UserData.create({
+<<<<<<< HEAD
 //     restaurant_id:,
 //     restaurant_name: req.body.title,
 //     restaurant_rating: req.body.,
@@ -70,10 +71,23 @@ module.exports = function(app) {
 //     restaurant_type:,
 //     restaurant_image:,
 //     restaurant_cost:,
+=======
+//     restaurant_id:
+//     restaurant_name:
+//     restaurant_rating:
+//     restaurant_zip: 
+//     restaurant_type:
+//     restaurant_image:
+//     restaurant_cost:
+>>>>>>> dfd9cf035c8b613a3b12e3c7f7a5e23af588a5a7
 //   })
 //   .then(function(favs) {
 //     res.json(favs);
 //   });
 // });
 
+<<<<<<< HEAD
 //TEST COMMENT
+=======
+};
+>>>>>>> dfd9cf035c8b613a3b12e3c7f7a5e23af588a5a7
