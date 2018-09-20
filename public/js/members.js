@@ -7,11 +7,12 @@ $(document).ready(function() {
 });
 
 window.onload = function () {
-  document.getElementById('button').onclick = function () {
+  document.getElementById('#zip').onclick = function () {
     zip = $("#userZip").val();
     console.log(zip);
     document.getElementById('modal').style.display = "none"
-
+  };
+};
 'use strict';
 
 const yelp = require('yelp-fusion');
@@ -50,7 +51,7 @@ client.search(searchRequest).then(response => {
 }).catch(e => {
   console.log(e);
 });
-
+  };
 // get zipcode
 // $.post("ROUT GOES HERE", zipcode, function(restaurants) {
      // Deal with data object restaurants
