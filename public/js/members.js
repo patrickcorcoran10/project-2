@@ -6,6 +6,12 @@ $(document).ready(function() {
   });
 });
 
+window.onload = function () {
+  document.getElementById('button').onclick = function () {
+    zip = $("#userZip").val();
+    console.log(zip);
+    document.getElementById('modal').style.display = "none"
+
 'use strict';
 
 const yelp = require('yelp-fusion');
