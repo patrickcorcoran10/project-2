@@ -11,8 +11,7 @@ window.onload = function () {
     zip = $("#userZip").val();
     console.log(zip);
     document.getElementById('modal').style.display = "none"
-  };
-};
+
 'use strict';
 
 const yelp = require('yelp-fusion');
@@ -56,3 +55,4 @@ client.search(searchRequest).then(response => {
 // $.post("ROUT GOES HERE", zipcode, function(restaurants) {
      // Deal with data object restaurants
 // })
+};
