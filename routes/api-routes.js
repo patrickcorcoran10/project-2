@@ -1,6 +1,12 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+const yelp = require('yelp-fusion');
+// Place holder for Yelp Fusion's API Key. Grab them
+// from https://www.yelp.com/developers/v3/manage_app
+const apiKey = 'fLm01xvY7ht4ZpS0zFcE5EB3pf7DiVCM1FFp-u6A54ohEpm4IulyRf-MxxFsPzwMi2R1VHYlmy053IyN5RrmVK4y2OeaZH4doou3n6v-rKi5WdqbF-0bn5z74fKTW3Yx';
+const client = yelp.client(apiKey);
+
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -52,6 +58,17 @@ module.exports = function(app) {
     }
   });
 
+  app.post("/api/yelpRequest", function (req, res) {
+    client.search({ location: req.body.zipcode }).
+    then(response => {
+      const places = response.jsonBody.business;
+      return res.json(places)
+    }).catch(e => {
+      console.log(e);
+    });
+  })
+}
+
 
 
 // GET route for user's favorite restaurants
@@ -63,7 +80,6 @@ module.exports = function(app) {
 // app.post("/api/newfav", function(req, res) {
 //   console.log(req.body)
 //   db.UserData.create({
-<<<<<<< HEAD
 //     restaurant_id:,
 //     restaurant_name: req.body.title,
 //     restaurant_rating: req.body.,
@@ -71,7 +87,6 @@ module.exports = function(app) {
 //     restaurant_type:,
 //     restaurant_image:,
 //     restaurant_cost:,
-=======
 //     restaurant_id:
 //     restaurant_name:
 //     restaurant_rating:
@@ -79,15 +94,11 @@ module.exports = function(app) {
 //     restaurant_type:
 //     restaurant_image:
 //     restaurant_cost:
->>>>>>> dfd9cf035c8b613a3b12e3c7f7a5e23af588a5a7
 //   })
 //   .then(function(favs) {
 //     res.json(favs);
 //   });
 // });
 
-<<<<<<< HEAD
-//TEST COMMENT
-=======
-};
->>>>>>> dfd9cf035c8b613a3b12e3c7f7a5e23af588a5a7
+
+

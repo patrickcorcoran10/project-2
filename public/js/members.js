@@ -44,3 +44,8 @@ client.search(searchRequest).then(response => {
 }).catch(e => {
   console.log(e);
 });
+
+// get zipcode
+// $.post("ROUT GOES HERE", zipcode, function(restaurants) {
+     // Deal with data object restaurants
+// })
