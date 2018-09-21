@@ -16,29 +16,33 @@ $.post("/api/yelpRequest", userInput, function (data) {
   // console.log(data);
   var businesses = data.jsonBody.businesses;
   for (var i = 0; i < 20; i++) {
-  // businesses[i];
-  document.getElementById("restaurantName").innerHTML = businesses[i].name;
+  var name = businesses[i].name;
+  var type = businesses[i].categories[0].title;
+  var location = businesses[i].location.display_address;
+  var phone = businesses[i].display_phone;
+  document.getElementById("restaurantName").innerHTML = name;
   document.getElementById("restaurantImage").innerHTML = ("<img src=" + businesses[i].image_url + " height=300 width=300 >");
-  document.getElementById("restaurantType").innerHTML = businesses[i].categories[0].title;
-  document.getElementById("restaurantLocation").innerHTML = businesses[i].location.display_address;
-  document.getElementById("restaurantPhone").innerHTML = businesses[i].display_phone;
-
-
-  // console.log(businesses[i].name);
-  // console.log(businesses[i].image_url);
-  // console.log(businesses[i].categories[0].title);
-  // console.log(businesses[i].location.display_address);
-  // console.log(businesses[i].display_phone);
-
+  document.getElementById("restaurantType").innerHTML = type;
+  document.getElementById("restaurantLocation").innerHTML = location;
+  document.getElementById("restaurantPhone").innerHTML = phone;
   };
+  $("#newFav").on("click", function(event) {
+    event.preventDefault();
+
+    var newFav = {
+      name: name,
+      type: type,
+      location: location,
+      phone: phone
+    }
+    console.log(newFav);
+
+    $.post("/api/newFav", newFav) 
+      .then(function(data) {
+        console.log(data);
+      })
+    
+  })
 })
 };
 
-(function($) {
-  "use strict";
-
-  // manual carousel controls
-  $('.next').click(function(){ $('.carousel').carousel('next');return false; });
-  $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
-  
-})(jQuery);
