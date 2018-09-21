@@ -18,7 +18,7 @@ $.post("/api/yelpRequest", userInput, function (data) {
   for (var i = 0; i < 20; i++) {
   // businesses[i];
   document.getElementById("restaurantName").innerHTML = businesses[i].name;
-  document.getElementById("restaurantImage").innerHTML = ("<img src=" + businesses[i].image_url + " height=140 width=150 >");
+  document.getElementById("restaurantImage").innerHTML = ("<img src=" + businesses[i].image_url + " height=300 width=300 >");
   document.getElementById("restaurantType").innerHTML = businesses[i].categories[0].title;
   document.getElementById("restaurantLocation").innerHTML = businesses[i].location.display_address;
   document.getElementById("restaurantPhone").innerHTML = businesses[i].display_phone;
