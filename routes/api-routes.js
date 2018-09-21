@@ -71,12 +71,27 @@ module.exports = function(app) {
       restoType = response.jsonBody.businesses[i].categories[0].title; 
       restoLocation = response.jsonBody.businesses[i].location.display_address;
       restoPhone = response.jsonBody.businesses[i].display_phone
-      console.log(restoName);  
-      console.log(restoRating);
-      console.log(restoImage);
-      console.log(restoType);
-      console.log(restoLocation);
-      console.log(restoPhone);
+      // console.log(restoName);  
+      // console.log(restoRating);
+      // console.log(restoImage);
+      // console.log(restoType);
+      // console.log(restoLocation);
+      // console.log(restoPhone);
+      restoSearch = {
+        name: restoName,
+        rating: restoRating,
+        image: restoImage,
+        type: restoType,
+        location: restoLocation,
+        phone: restoPhone,
+      };
+      // var restoArr = [];
+      // restoArr.push(restoSearch);
+      // console.log(restoArr);
+      // console.log(restoSearch[4]);
+    
+      // console.log(restoSearch);
+
 
            
       // console.log(JSON.stringify(places));
