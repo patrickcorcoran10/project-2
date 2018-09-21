@@ -58,84 +58,18 @@ module.exports = function(app) {
       });
     }
   });
-
   app.post("/api/yelpRequest", function (req, res) {
-        console.log(req.body);
-    // client.search({ location: req.body.zipcode }).
-    client.search({ location: "60608" }).
+    client.search({ location: req.body.zip }).
     then(response => {
-      for (var i = 0; i < 20; i++) {
-      restoName = response.jsonBody.businesses[i].name;
-      restoRating = response.jsonBody.businesses[i].rating;
-      restoImage =  response.jsonBody.businesses[i].image_url;
-      restoType = response.jsonBody.businesses[i].categories[0].title; 
-      restoLocation = response.jsonBody.businesses[i].location.display_address;
-      restoPhone = response.jsonBody.businesses[i].display_phone
-      // console.log(restoName);  
-      // console.log(restoRating);
-      // console.log(restoImage);
-      // console.log(restoType);
-      // console.log(restoLocation);
-      // console.log(restoPhone);
-      restoSearch = {
-        name: restoName,
-        rating: restoRating,
-        image: restoImage,
-        type: restoType,
-        location: restoLocation,
-        phone: restoPhone,
-      };
-      // var restoArr = [];
-      // restoArr.push(restoSearch);
-      // console.log(restoArr);
-      // console.log(restoSearch[4]);
-    
-      // console.log(restoSearch);
-
-
-           
-      // console.log(JSON.stringify(places));
-      } 
-      return res.json(places) 
+      // const places = response.body.businesses;
+      return res.json(response)
     }).catch(e => {
       console.log(e);
     });
-    
-
   })
-}
 
+};
 
-
-
-// GET route for user's favorite restaurants
-
-// 
-
-// POST route for saving a new restaurant into the datbase
-
-// app.post("/api/newfav", function(req, res) {
-//   console.log(req.body)
-//   db.UserData.create({
-//     restaurant_id:,
-//     restaurant_name: req.body.title,
-//     restaurant_rating: req.body.,
-//     restaurant_zip: ,
-//     restaurant_type:,
-//     restaurant_image:,
-//     restaurant_cost:,
-//     restaurant_id:
-//     restaurant_name:
-//     restaurant_rating:
-//     restaurant_zip: 
-//     restaurant_type:
-//     restaurant_image:
-//     restaurant_cost:
-//   })
-//   .then(function(favs) {
-//     res.json(favs);
-//   });
-// });
 
 
 
