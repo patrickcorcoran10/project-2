@@ -7,7 +7,7 @@ const yelp = require('yelp-fusion');
 const apiKey = 'fLm01xvY7ht4ZpS0zFcE5EB3pf7DiVCM1FFp-u6A54ohEpm4IulyRf-MxxFsPzwMi2R1VHYlmy053IyN5RrmVK4y2OeaZH4doou3n6v-rKi5WdqbF-0bn5z74fKTW3Yx';
 const client = yelp.client(apiKey);
 // var members = require("../public/js/members");
-
+var UserData = require("../models/userData.js");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -65,6 +65,23 @@ module.exports = function(app) {
       return res.json(response)
     }).catch(e => {
       console.log(e);
+    });
+  });
+
+  app.post("/api/newFav", function(req, res) {
+    console.log("New Fav Restaurant: ");
+    console.log(req.body);
+    UserData.create({
+      name: req.body.name,
+      type: req.body.type,
+      location: req.body.location,
+      phone: req.body.phone
+    });
+  });
+  
+  app.get("/api/favs", function(req, res) {
+    UserData.findAll({}).then(function(results) {
+      res.json(results);
     });
   })
 
