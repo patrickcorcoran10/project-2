@@ -32,7 +32,7 @@ $.post("/api/yelpRequest", userInput, function (data) {
     var newFav = {
       name: name,
       type: type,
-      location: location,
+      // location: location,
       phone: phone
     }
     console.log(newFav);
