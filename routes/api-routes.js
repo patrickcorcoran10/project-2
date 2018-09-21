@@ -6,6 +6,7 @@ const yelp = require('yelp-fusion');
 // from https://www.yelp.com/developers/v3/manage_app
 const apiKey = 'fLm01xvY7ht4ZpS0zFcE5EB3pf7DiVCM1FFp-u6A54ohEpm4IulyRf-MxxFsPzwMi2R1VHYlmy053IyN5RrmVK4y2OeaZH4doou3n6v-rKi5WdqbF-0bn5z74fKTW3Yx';
 const client = yelp.client(apiKey);
+// var members = require("../public/js/members");
 
 
 module.exports = function(app) {
@@ -23,14 +24,14 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password
     }).then(function() {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
-      console.log(err);
+      // console.log(err);
       res.json(err);
       // res.status(422).json(err.errors[0].message);
     });
@@ -59,15 +60,36 @@ module.exports = function(app) {
   });
 
   app.post("/api/yelpRequest", function (req, res) {
-    client.search({ location: req.body.zipcode }).
+        console.log(req.body);
+    // client.search({ location: req.body.zipcode }).
+    client.search({ location: "60608" }).
     then(response => {
-      const places = response.jsonBody.business;
-      return res.json(places)
+      for (var i = 0; i < 20; i++) {
+      restoName = response.jsonBody.businesses[i].name;
+      restoRating = response.jsonBody.businesses[i].rating;
+      restoImage =  response.jsonBody.businesses[i].image_url;
+      restoType = response.jsonBody.businesses[i].categories[0].title; 
+      restoLocation = response.jsonBody.businesses[i].location.display_address;
+      restoPhone = response.jsonBody.businesses[i].display_phone
+      console.log(restoName);  
+      console.log(restoRating);
+      console.log(restoImage);
+      console.log(restoType);
+      console.log(restoLocation);
+      console.log(restoPhone);
+
+           
+      // console.log(JSON.stringify(places));
+      } 
+      return res.json(places) 
     }).catch(e => {
       console.log(e);
     });
+    
+
   })
 }
+
 
 
 
