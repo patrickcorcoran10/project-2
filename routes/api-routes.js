@@ -80,9 +80,10 @@ module.exports = function(app) {
   });
   
   app.get("/api/favs", function(req, res) {
-    UserData.findAll({}).then(function(results) {
+    db.UserData.findAll({}).then(function(results) {
       res.json(results);
     });
+    console.log(results);
   })
 
 };
