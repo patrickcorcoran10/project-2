@@ -1,0 +1,91 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+#logIn {
+  background-image: url("../images/lust.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
+}
+
+#signUp {
+  background-image: url("../images/lust.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
+}
+#favs{
+  background-image: url("../images/lust.jpg ");
+  background-repeat: repeat;
+  background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
+}
+#members {
+  background-image: url("../images/lust.jpg ");
+  background-repeat: repeat;
+  background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
+}
+#restaurants {
+  color: black;
+  font-family: 'Hind Madurai', sans-serif;
+}
+
+/*  */
+#modal {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+}
+.modalconent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 80%;
+  padding: 20px;
+}
+
+@import "http://nyplintranet-training.appspot.com/css/themes/nypl/main.css";
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
