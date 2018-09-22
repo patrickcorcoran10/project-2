@@ -71,10 +71,10 @@ module.exports = function(app) {
   app.post("/api/newFav", function(req, res) {
     console.log("New Fav Restaurant: ");
     console.log(req.body);
-    UserData.create({
+    db.UserData.create({
       name: req.body.name,
       type: req.body.type,
-      location: req.body.location,
+      // location: req.body.location,
       phone: req.body.phone
     });
   });
