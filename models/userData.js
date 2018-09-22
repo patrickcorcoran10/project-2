@@ -1,9 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
   var UserData = sequelize.define("UserData", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   primaryKey: true
+    // },
     name: {
       type: DataTypes.STRING,
       
