@@ -1,7 +1,12 @@
+// //////////////////////////////
+// Non-functioning Code/////////
+// //////////////////////////////
+
+
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+  var Login = sequelize.define("login", {
+    userName: DataTypes.STRING,
+    password: DataTypes.STRING
   });
-  return Example;
+  return Login;
 };
