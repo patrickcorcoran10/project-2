@@ -8,9 +8,9 @@ $(document).ready(function() {
     document.getElementById('modal').style.display = "none"
     yelpRequestHandler(userInput)
   });
-
-
 });
+
+// function that takes the user inputed zip and uses it to query Yelp API and brings back the results.
 function yelpRequestHandler(userInput) {
 $.post("/api/yelpRequest", userInput, function (data) {
   // console.log(data);
@@ -20,6 +20,9 @@ $.post("/api/yelpRequest", userInput, function (data) {
   var type = businesses[i].categories[0].title;
   var location = businesses[i].location.display_address;
   var phone = businesses[i].display_phone;
+
+
+  // Printing the Query Results to the Page
   document.getElementById("restaurantName").innerHTML = name;
   document.getElementById("restaurantImage").innerHTML = ("<img src=" + businesses[i].image_url + " height=300 width=300 >");
   document.getElementById("restaurantType").innerHTML = type;
@@ -36,7 +39,7 @@ $.post("/api/yelpRequest", userInput, function (data) {
       phone: phone
     }
     console.log(newFav);
-
+// Route to post to the database
     $.post("/api/newFav", newFav) 
       .then(function(data) {
         console.log(data);
