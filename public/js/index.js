@@ -1,3 +1,7 @@
+// //////////////////////////////
+// Non-functioning Code/////////
+// //////////////////////////////
+
 $(function() {
 
   $('#login-form-link').click(function(e) {

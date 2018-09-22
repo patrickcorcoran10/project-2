@@ -10,6 +10,40 @@ const client = yelp.client(apiKey);
 var UserData = require("../models/userData.js");
 
 module.exports = function(app) {
+
+    // Yelp API route with zip code from user input as the query
+    app.post("/api/yelpRequest", function (req, res) {
+      client.search({ location: req.body.zip }).
+      then(response => {
+        // const places = response.body.businesses;
+        return res.json(response)
+      }).catch(e => {
+        console.log(e);
+      });
+    });
+  // Route to the db. For posting favorited restaurants to the db.
+    app.post("/api/newFav", function(req, res) {
+      console.log("New Fav Restaurant: ");
+      console.log(req.body);
+      db.UserData.create({
+        name: req.body.name,
+        type: req.body.type,
+        // location: req.body.location,
+        phone: req.body.phone
+      });
+    });
+    // Route to the db to get favorited restaurants
+    app.get("/api/favs", function(req, res) {
+      db.UserData.findAll({}).then(function(results) {
+        res.json(results);
+      });
+      console.log(results);
+    })
+
+    //////////////////////////////////////////////////////////////
+    // Code Below is not functioning.
+    /////////////////////////////////////////////////////////////////
+    
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -58,33 +92,6 @@ module.exports = function(app) {
       });
     }
   });
-  app.post("/api/yelpRequest", function (req, res) {
-    client.search({ location: req.body.zip }).
-    then(response => {
-      // const places = response.body.businesses;
-      return res.json(response)
-    }).catch(e => {
-      console.log(e);
-    });
-  });
-
-  app.post("/api/newFav", function(req, res) {
-    console.log("New Fav Restaurant: ");
-    console.log(req.body);
-    db.UserData.create({
-      name: req.body.name,
-      type: req.body.type,
-      // location: req.body.location,
-      phone: req.body.phone
-    });
-  });
-  
-  app.get("/api/favs", function(req, res) {
-    db.UserData.findAll({}).then(function(results) {
-      res.json(results);
-    });
-    console.log(results);
-  })
 
 };
 

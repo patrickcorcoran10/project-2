@@ -5,24 +5,36 @@ form.login {
 
 #logIn {
   background-image: url("../images/lust.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
 }
 
 #signUp {
   background-image: url("../images/lust.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
 }
 #favs{
   background-image: url("../images/lust.jpg ");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
 }
 #members {
   background-image: url("../images/lust.jpg ");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
+}
+#restaurants {
+  color: black;
+  font-family: 'Hind Madurai', sans-serif;
 }
 
 /*  */
